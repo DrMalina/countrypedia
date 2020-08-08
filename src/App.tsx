@@ -2,25 +2,33 @@ import React, { FC, useState } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-import { Header } from './components/Header/Header';
-import { lightMode, darkMode } from './theme/mainTheme';
+import { Dashboard } from './components/Dashboard';
+import { Header } from './components/Header';
+import { lightMode, darkMode } from './theme';
 
 const App: FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const palletType = isDarkMode ? 'dark' : 'light';
-  const theme = isDarkMode ? darkMode : lightMode;
+  const currentTheme = isDarkMode ? darkMode : lightMode;
 
-  const currentTheme = createMuiTheme({
+  const theme = createMuiTheme({
     palette: {
       type: palletType,
-      ...theme,
+      ...currentTheme,
     },
   });
 
+  const handleChange = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <ThemeProvider theme={currentTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
+      <Header handleChange={handleChange} />
+      <main>
+        <Dashboard />
+      </main>
     </ThemeProvider>
   );
 };
