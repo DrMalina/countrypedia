@@ -4,10 +4,11 @@ export const lightMode = {
     main: '#fafafa',
     dark: '#c7c7c7',
   },
+
   secondary: {
-    light: '#ff4081',
-    main: '#f50057',
-    dark: '#c51162',
+    light: '#4dabf5',
+    main: '#2196f3',
+    dark: '#1769aa',
   },
 };
 
