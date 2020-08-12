@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 
 interface RegionFilterProps {
   regions: string[];
+  doFetch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const useStyles = makeStyles(() =>
@@ -20,11 +21,24 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-export const RegionFilter: FC<RegionFilterProps> = ({ regions }) => {
-  const [currentRegion, setCurrentRegion] = useState<string>('All');
+export const RegionFilter: FC<RegionFilterProps> = ({ regions, doFetch }) => {
+  const [currentRegion, setCurrentRegion] = useState<string>('');
+
+  useEffect(() => {
+    setCurrentRegion(regions[0]);
+  }, [regions]);
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setCurrentRegion(event.target.value as string);
+    const region = event.target.value;
+    setCurrentRegion(region as string);
+
+    let url = `https://restcountries.eu/rest/v2/region/${region}`;
+
+    if (region === 'All') {
+      url = 'https://restcountries.eu/rest/v2/all';
+    }
+
+    doFetch(url);
   };
 
   const classes = useStyles();
@@ -36,7 +50,7 @@ export const RegionFilter: FC<RegionFilterProps> = ({ regions }) => {
         <Select
           labelId="regionFilterLabel"
           id="regionFilter"
-          value={currentRegion}
+          value={currentRegion || ''}
           onChange={handleChange}
           MenuProps={{
             anchorOrigin: {
