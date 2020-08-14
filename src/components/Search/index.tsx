@@ -4,6 +4,10 @@ import InputBase from '@material-ui/core/InputBase';
 import Paper from '@material-ui/core/Paper';
 import SearchIcon from '@material-ui/icons/Search';
 
+interface SearchProps {
+  handleSearch: (term: string) => void;
+}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     search: {
@@ -29,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const Search: FC = () => {
+export const Search: FC<SearchProps> = ({ handleSearch }) => {
   const classes = useStyles();
 
   return (
@@ -41,6 +45,7 @@ export const Search: FC = () => {
         placeholder="Search for a country..."
         className={classes.inputRoot}
         inputProps={{ 'aria-label': 'search' }}
+        onChange={(e) => handleSearch(e.target.value)}
       />
     </Paper>
   );

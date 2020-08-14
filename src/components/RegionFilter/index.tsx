@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -7,7 +7,8 @@ import Select from '@material-ui/core/Select';
 
 interface RegionFilterProps {
   regions: string[];
-  doFetch: React.Dispatch<React.SetStateAction<string>>;
+  current: string;
+  handleRegionChange: (region: string) => void;
 }
 
 const useStyles = makeStyles(() =>
@@ -21,24 +22,13 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-export const RegionFilter: FC<RegionFilterProps> = ({ regions, doFetch }) => {
-  const [currentRegion, setCurrentRegion] = useState<string>('');
-
-  useEffect(() => {
-    setCurrentRegion(regions[0]);
-  }, [regions]);
-
+export const RegionFilter: FC<RegionFilterProps> = ({
+  current = 'All',
+  regions = [],
+  handleRegionChange,
+}) => {
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    const region = event.target.value;
-    setCurrentRegion(region as string);
-
-    let url = `https://restcountries.eu/rest/v2/region/${region}`;
-
-    if (region === 'All') {
-      url = 'https://restcountries.eu/rest/v2/all';
-    }
-
-    doFetch(url);
+    handleRegionChange(event.target.value as string);
   };
 
   const classes = useStyles();
@@ -50,7 +40,7 @@ export const RegionFilter: FC<RegionFilterProps> = ({ regions, doFetch }) => {
         <Select
           labelId="regionFilterLabel"
           id="regionFilter"
-          value={currentRegion || ''}
+          value={current}
           onChange={handleChange}
           MenuProps={{
             anchorOrigin: {
