@@ -8,15 +8,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { SkeletonCard } from '../SkeletonCard';
+import { Country as CountryProps } from '../../types';
 import { capitalizeFirstLetter, convertValueToLocale } from '../../utils';
-
-interface CountryProps {
-  name: string;
-  flag: string;
-  population: number;
-  region: string;
-  capital: string;
-}
 
 const useStyles = makeStyles({
   title: {
@@ -61,7 +54,7 @@ export const Country: FC<CountryProps> = (props) => {
               title={`Flag of ${name}`}
             />
             <CardContent>
-              <Typography variant="h6" component="h2" className={classes.title}>
+              <Typography variant="subtitle1" component="h2" className={classes.title}>
                 {name}
               </Typography>
               <List>

@@ -1,18 +1,10 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { Country } from '../Country';
 import { SkeletonCard } from '../SkeletonCard';
-
-interface CountryData {
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-  flag: string;
-}
+import { Country as CountryData } from '../../types';
 
 interface CountriesGridProps {
   countries: CountryData[];
@@ -43,9 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const CountriesGrid: FC<CountriesGridProps> = ({ countries, isLoading, isError }) => {
-  const [showCountries, setShowCountries] = useState<boolean>(false);
-
+export const CountriesGrid: FC<CountriesGridProps> = ({ countries = [], isLoading, isError }) => {
   const classes = useStyles();
 
   return (
@@ -75,21 +65,3 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ countries, isLoading, is
     </Grid>
   );
 };
-
-/*
-{isLoading ? (
-        <CircularProgress color="secondary" className={classes.loading} />
-      ) : (
-        countries.map((country) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
-            <Country
-              name={country.name}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              flag={country.flag}
-            />
-          </Grid>
-        ))
-      )}
-*/
