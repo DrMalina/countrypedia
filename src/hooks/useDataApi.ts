@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 type Query = string;
@@ -6,18 +6,18 @@ type Loading = boolean;
 type Error = boolean;
 type SetUrl = React.Dispatch<React.SetStateAction<string>>;
 
-interface Data {
-  hits: [];
+interface Data<T> {
+  hits: T[];
 }
 
-interface Result {
-  data: Data;
+interface Result<T> {
+  data: Data<T>;
   isLoading: Loading;
   isError: Error;
 }
 
-export const useDataApi = (query: Query): [Result, SetUrl] => {
-  const [data, setData] = useState<Data>({ hits: [] });
+export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
+  const [data, setData] = useState<Data<T>>({ hits: [] });
   const [url, setUrl] = useState<string>(query);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
