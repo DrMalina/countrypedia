@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const Dashboard: FC = () => {
-  const [{ data, isLoading, isError }, doFetch] = useDataApi<Country>(`${BASE_URL}/all`);
+  const [{ data, isLoading, error }, doFetch] = useDataApi<Country>(`${BASE_URL}/all`);
   const [regions, setRegions] = useState<string[]>([]);
-  const [currentRegion, setCurrentRegion] = useState<string>('');
+  const [currentRegion, setCurrentRegion] = useState<string>('All');
   const [countries, setCountries] = useState<Country[]>([]);
   const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
 
@@ -37,35 +37,32 @@ export const Dashboard: FC = () => {
     }
   }, [data, regions]);
 
-  // set first region as default when component is mounted
-  useEffect(() => {
-    if (regions.length > 0) {
-      setCurrentRegion(regions[0]);
-    }
-  }, [regions]);
-
   useEffect(() => {
     if (currentRegion === 'All') {
       setCountries(data.hits);
     } else {
       setCountries(data.hits.filter((country) => country.region === currentRegion));
     }
-  }, [currentRegion]);
+  }, [currentRegion, data.hits]);
 
   // filter results based on user input
   useEffect(() => {
     if (typeof debouncedSearchTerm !== 'undefined') {
+      let url = '';
+
+      // when input is empty, fetch all countries by default
       if (checkIfEmpty(debouncedSearchTerm)) {
-        doFetch(`${BASE_URL}/all`);
+        url = `${BASE_URL}/all`;
       } else {
-        doFetch(`${BASE_URL}/name/${debouncedSearchTerm}`);
+        url = `${BASE_URL}/name/${debouncedSearchTerm}`;
       }
+
+      doFetch(url);
     }
   }, [debouncedSearchTerm]);
 
   const handleRegionChange = (region: string) => {
     setCurrentRegion(region);
-    // doFetch(region === 'All' ? `${BASE_URL}/all` : `${BASE_URL}/region/${region}`);
   };
 
   const handleSearch = (term: string) => {
@@ -84,7 +81,7 @@ export const Dashboard: FC = () => {
           handleRegionChange={handleRegionChange}
         />
       </div>
-      <CountriesGrid countries={countries} isLoading={isLoading} isError={isError} />
+      <CountriesGrid countries={countries} isLoading={isLoading} error={error} />
     </Container>
   );
 };

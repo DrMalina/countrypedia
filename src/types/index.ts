@@ -5,3 +5,8 @@ export interface Country {
   region: string;
   capital: string;
 }
+
+export interface Error {
+  status: number;
+  message: string;
+}

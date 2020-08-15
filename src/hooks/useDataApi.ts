@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Error } from '../types/';
 
 type Query = string;
 type Loading = boolean;
-type Error = boolean;
 type SetUrl = React.Dispatch<React.SetStateAction<string>>;
 
 interface Data<T> {
@@ -13,25 +13,25 @@ interface Data<T> {
 interface Result<T> {
   data: Data<T>;
   isLoading: Loading;
-  isError: Error;
+  error: Error | null;
 }
 
 export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
   const [data, setData] = useState<Data<T>>({ hits: [] });
   const [url, setUrl] = useState<string>(query);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsError(false);
+      setError(null);
       setIsLoading(true);
 
       try {
         const result = await axios.get(url);
         setData({ hits: result.data });
       } catch (error) {
-        setIsError(true);
+        setError({ status: error.response.data.status, message: error.response.data.message });
       }
       setIsLoading(false);
     };
@@ -39,5 +39,5 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
     fetchData();
   }, [url]);
 
-  return [{ data, isLoading, isError }, setUrl];
+  return [{ data, isLoading, error }, setUrl];
 };
