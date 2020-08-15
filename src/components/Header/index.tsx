@@ -32,23 +32,26 @@ export const Header: FC<HeaderProps> = ({ handleChange }) => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="lg">
-        <Toolbar disableGutters>
-          <Link component="button" color="textPrimary" underline="none" className={classes.title}>
-            <Typography variant="h5" component="h1" className={classes.heading}>
-              Where In The World?
-            </Typography>
-          </Link>
-          <Brightness5OutlinedIcon />
-          <Switch
-            onChange={handleChange}
-            name="darkModeSwitch"
-            inputProps={{ 'aria-label': 'dark mode switch' }}
-          />
-          <Brightness2OutlinedIcon />
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <>
+      <AppBar>
+        <Container maxWidth="lg">
+          <Toolbar disableGutters>
+            <Link component="button" color="textPrimary" underline="none" className={classes.title}>
+              <Typography variant="h5" component="h1" className={classes.heading}>
+                Where In The World?
+              </Typography>
+            </Link>
+            <Brightness5OutlinedIcon />
+            <Switch
+              onChange={handleChange}
+              name="darkModeSwitch"
+              inputProps={{ 'aria-label': 'dark mode switch' }}
+            />
+            <Brightness2OutlinedIcon />
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Toolbar id="back-to-top-anchor" />
+    </>
   );
 };
