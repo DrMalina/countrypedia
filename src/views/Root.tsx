@@ -33,7 +33,6 @@ const Root: FC = () => {
           <Switch>
             <Route exact path={routes.home} component={HomePage} />
             <Route path={routes.country} component={CountryPage} />
-            <Route path="*" component={CountryPage} />
           </Switch>
         </main>
       </BrowserRouter>
