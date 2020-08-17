@@ -23,7 +23,7 @@ const useStyles = makeStyles(() =>
 );
 
 export const RegionFilter: FC<RegionFilterProps> = ({
-  current = 'All',
+  current = '',
   regions = [],
   handleRegionChange,
 }) => {
