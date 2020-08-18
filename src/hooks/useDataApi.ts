@@ -31,7 +31,15 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
         const result = await axios.get(url);
         setData({ hits: result.data });
       } catch (error) {
-        setError({ status: error.response.data.status, message: error.response.data.message });
+        if (error && error.response) {
+          setError({
+            status: error.response.data.status,
+            message: error.response.data.message,
+          });
+        } else {
+          console.log(error);
+          setError({ status: -1, message: 'Unknown error' });
+        }
       }
       setIsLoading(false);
     };

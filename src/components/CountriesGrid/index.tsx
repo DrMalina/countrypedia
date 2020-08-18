@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { Country } from '../Country';
-import { SkeletonCard } from '../SkeletonCard';
-import { Country as CountryData, Error } from '../../types';
+import { CountryCard } from 'components/CountryCard';
+import { SkeletonCard } from 'components/SkeletonCard';
+import { Country as CountryData, Error } from 'types';
 
 interface CountriesGridProps {
   countries: CountryData[];
@@ -34,20 +34,19 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ countries = [], isLoadin
   const classes = useStyles();
 
   const renderContent = (): JSX.Element | JSX.Element[] => {
-    if (error || countries.length === 0) {
-      // when there is unknown error
-      if (error && error.status !== 404) {
-        console.log(error);
-        return (
-          <Typography variant="h5" component="h2" className={classes.status}>
-            Something went wrong...
-          </Typography>
-        );
-      } else {
+    if (error) {
+      if (error.status === 404) {
         // when api returns 404 or when there is no such country in selected region, like 'Brazil' in 'Europe'
         return (
           <Typography variant="h5" component="h2" className={classes.status}>
             No results found....
+          </Typography>
+        );
+      } else {
+        // when there is unknown error
+        return (
+          <Typography variant="h5" component="h2" className={classes.status}>
+            Something went wrong...
           </Typography>
         );
       }
@@ -60,7 +59,7 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ countries = [], isLoadin
           ))
         : countries.map((country) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
-              <Country
+              <CountryCard
                 name={country.name}
                 population={country.population}
                 region={country.region}
