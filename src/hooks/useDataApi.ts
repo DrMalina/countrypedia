@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Error } from '../types/';
+import { Error } from 'types';
 
 type Query = string;
 type Loading = boolean;
