@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { Dashboard } from '../components/Dashboard';
-import { ScrollTop } from '../components/ScrollTop';
+import { Dashboard } from 'components/Dashboard';
+import { ScrollTop } from 'components/ScrollTop';
 
 export const HomePage: FC = () => {
   return (
