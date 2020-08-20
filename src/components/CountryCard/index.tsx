@@ -11,8 +11,15 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { SkeletonCard } from 'components/SkeletonCard';
-import { Country as CountryProps } from 'types';
 import { capitalizeFirstLetter, convertValueToLocale } from 'utils';
+
+interface CountryCardProps {
+  name: string;
+  population: number;
+  region: string;
+  flag: string;
+  capital: string;
+}
 
 const useStyles = makeStyles({
   title: {
@@ -30,7 +37,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const CountryCard: FC<CountryProps> = (props) => {
+export const CountryCard: FC<CountryCardProps> = (props) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const { name, flag, ...rest } = props;
 
@@ -47,7 +54,11 @@ export const CountryCard: FC<CountryProps> = (props) => {
       {!isVisible ? (
         <SkeletonCard />
       ) : (
-        <Link underline="none" component={RouterLink} to={`/${slugify(name, { lower: true })}`}>
+        <Link
+          underline="none"
+          component={RouterLink}
+          to={{ pathname: `/${slugify(name, { lower: true })}`, state: name }}
+        >
           <Card>
             <CardActionArea>
               <CardMedia
