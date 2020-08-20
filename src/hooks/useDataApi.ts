@@ -28,7 +28,9 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
       setIsLoading(true);
 
       try {
-        const result = await axios.get(url);
+        // const result = await axios.get(url);
+        // setData({ hits: result.data });
+        const result = await axios.get('http://localhost:3001/countries');
         setData({ hits: result.data });
       } catch (error) {
         if (error && error.response) {
