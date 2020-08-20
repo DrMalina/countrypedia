@@ -1,13 +1,13 @@
 import React, { FC, useEffect, useState } from 'react';
 import Container from '@material-ui/core/Container';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { CountriesGrid } from '../CountriesGrid';
-import { Search } from '../Search';
-import { RegionFilter } from '../RegionFilter';
-import { BASE_URL } from '../../api/restcountries';
-import { useDataApi, useDebounce } from '../../hooks';
-import { Country } from '../../types';
-import { checkIfEmpty } from '../../utils';
+import { BASE_URL } from 'api/restcountries';
+import { CountriesGrid } from 'components/CountriesGrid';
+import { Search } from 'components/Search';
+import { RegionFilter } from 'components/RegionFilter';
+import { useDataApi, useDebounce, useCountries } from 'hooks';
+import { Country } from 'types';
+import { checkIfEmpty } from 'utils';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,27 +23,30 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Dashboard: FC = () => {
   const [{ data, isLoading, error }, doFetch] = useDataApi<Country>(`${BASE_URL}/all`);
+  const { countries, setCountries } = useCountries();
   const [regions, setRegions] = useState<string[]>([]);
   const [currentRegion, setCurrentRegion] = useState<string>('All');
-  const [countries, setCountries] = useState<Country[]>([]);
+  const [results, setResults] = useState<Country[]>([]);
   const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  // populate regions only once on first api call
+  // populate regions and countries only once on first api call
   useEffect(() => {
     if (data.hits.length !== 0 && regions.length === 0) {
+      setCountries(data.hits);
       setRegions(['All', ...filterUniqueRegions(data.hits).sort()]);
     }
   }, [data, regions]);
 
+  // filter results based on chosen region
   useEffect(() => {
     if (currentRegion === 'All') {
-      setCountries(data.hits);
+      setResults(countries);
     } else {
-      setCountries(data.hits.filter((country) => country.region === currentRegion));
+      setResults(countries.filter((country) => country.region === currentRegion));
     }
-  }, [currentRegion, data.hits]);
+  }, [countries, currentRegion, data.hits]);
 
   // filter results based on user input
   useEffect(() => {
@@ -81,11 +84,11 @@ export const Dashboard: FC = () => {
           handleRegionChange={handleRegionChange}
         />
       </div>
-      <CountriesGrid countries={countries} isLoading={isLoading} error={error} />
+      <CountriesGrid results={results} isLoading={isLoading} error={error} />
     </Container>
   );
 };
 
 function filterUniqueRegions(countries: Country[]): string[] {
-  return [...new Set(countries.map((element) => element.region))].filter(Boolean);
+  return [...new Set(countries.map((country) => country.region))].filter(Boolean);
 }

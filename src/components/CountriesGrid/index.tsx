@@ -7,7 +7,7 @@ import { SkeletonCard } from 'components/SkeletonCard';
 import { Country as CountryData, Error } from 'types';
 
 interface CountriesGridProps {
-  countries: CountryData[];
+  results: CountryData[];
   isLoading: boolean;
   error: Error | null;
 }
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const CountriesGrid: FC<CountriesGridProps> = ({ countries = [], isLoading, error }) => {
+export const CountriesGrid: FC<CountriesGridProps> = ({ results = [], isLoading, error }) => {
   const classes = useStyles();
 
   const renderContent = (): JSX.Element | JSX.Element[] => {
@@ -57,7 +57,7 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ countries = [], isLoadin
               <SkeletonCard />
             </Grid>
           ))
-        : countries.map((country) => (
+        : results.map((country) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
               <CountryCard
                 name={country.name}
