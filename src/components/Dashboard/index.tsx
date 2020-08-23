@@ -22,19 +22,25 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const Dashboard: FC = () => {
-  const [{ data, isLoading, error }, doFetch] = useDataApi<Country>(`${BASE_URL}/all`);
+  const [{ data, isLoading, error }, doFetch] = useDataApi<Country>('');
   const { countries, setCountries } = useCountries();
   const [regions, setRegions] = useState<string[]>([]);
   const [currentRegion, setCurrentRegion] = useState<string>('All');
   const [results, setResults] = useState<Country[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  // populate regions and countries only once on first api call
+  // populate countries on api call
+  useEffect(() => {
+    if (data.hits.length !== 0) {
+      setCountries(data.hits);
+    }
+  }, [data]);
+
+  // populate regions only once on first api call
   useEffect(() => {
     if (data.hits.length !== 0 && regions.length === 0) {
-      setCountries(data.hits);
       setRegions(['All', ...filterUniqueRegions(data.hits).sort()]);
     }
   }, [data, regions]);
@@ -46,22 +52,20 @@ export const Dashboard: FC = () => {
     } else {
       setResults(countries.filter((country) => country.region === currentRegion));
     }
-  }, [countries, currentRegion, data.hits]);
+  }, [countries, currentRegion]);
 
   // filter results based on user input
   useEffect(() => {
-    if (typeof debouncedSearchTerm !== 'undefined') {
-      let url = '';
+    let url = '';
 
-      // when input is empty, fetch all countries by default
-      if (checkIfEmpty(debouncedSearchTerm)) {
-        url = `${BASE_URL}/all`;
-      } else {
-        url = `${BASE_URL}/name/${debouncedSearchTerm}`;
-      }
-
-      doFetch(url);
+    // when input is empty, fetch all countries by default
+    if (checkIfEmpty(debouncedSearchTerm)) {
+      url = `${BASE_URL}/all`;
+    } else {
+      url = `${BASE_URL}/name/${debouncedSearchTerm}`;
     }
+
+    doFetch(url);
   }, [debouncedSearchTerm]);
 
   const handleRegionChange = (region: string) => {
