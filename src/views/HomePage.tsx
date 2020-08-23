@@ -37,41 +37,78 @@ export const HomePage: FC = () => {
 
   const classes = useStyles();
 
-  // populate countries on api call
-  useEffect(() => {
-    if (data.hits.length !== 0) {
-      setCountries(data.hits);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (!countries.length) {
+  //     doFetch(`${BASE_URL}/all`);
+  //   }
+  // }, [countries]);
 
-  // populate regions only once on first api call
   useEffect(() => {
-    if (data.hits.length !== 0 && regions.length === 0) {
+    if (countries.length && currentRegion === 'All' && !debouncedSearchTerm) {
+      setResults(countries);
+      setRegions(['All', ...filterUniqueRegions(countries).sort()]);
+    }
+  }, [countries, currentRegion, debouncedSearchTerm]);
+
+  // populate regions and countries only once on first api call
+  useEffect(() => {
+    // if (countries.length && !regions.length) {
+    //   setResults(countries);
+    //   setRegions(['All', ...filterUniqueRegions(countries).sort()]);
+    // } else if (data.hits.length && !regions.length) {
+    //   setCountries(data.hits);
+    //   setRegions(['All', ...filterUniqueRegions(data.hits).sort()]);
+    // }
+    if (data.hits.length && !regions.length) {
+      setCountries(data.hits);
       setRegions(['All', ...filterUniqueRegions(data.hits).sort()]);
     }
   }, [data, regions]);
 
   // filter results based on chosen region
+  //useEffect(() => {
+  //if (currentRegion === 'All') {
+  //setResults(data.hits);
+  //} else {
+  //setResults(data.hits.filter((country) => country.region === currentRegion));
+  //}
+  //}, [data, currentRegion]);
+
   useEffect(() => {
     if (currentRegion === 'All') {
-      setResults(countries);
+      setResults(debouncedSearchTerm ? data.hits : countries);
     } else {
-      setResults(countries.filter((country) => country.region === currentRegion));
+      const array = debouncedSearchTerm ? data.hits : countries;
+      setResults(array.filter((country) => country.region === currentRegion));
     }
-  }, [countries, currentRegion]);
+  }, [data, currentRegion]);
 
   // filter results based on user input
+  //useEffect(() => {
+  //let url = '';
+
+  //// when input is empty, fetch all countries by default
+  //if (checkIfEmpty(debouncedSearchTerm)) {
+  //url = `${BASE_URL}/all`;
+  //} else {
+  //url = `${BASE_URL}/name/${debouncedSearchTerm}`;
+  //}
+
+  //doFetch(url);
+  //}, [debouncedSearchTerm]);
   useEffect(() => {
-    let url = '';
-
-    // when input is empty, fetch all countries by default
     if (checkIfEmpty(debouncedSearchTerm)) {
-      url = `${BASE_URL}/all`;
+      if (countries.length) {
+        setResults(countries);
+      } else {
+        doFetch(`${BASE_URL}/all`);
+      }
     } else {
-      url = `${BASE_URL}/name/${debouncedSearchTerm}`;
+      doFetch(`${BASE_URL}/name/${debouncedSearchTerm}`);
     }
-
-    doFetch(url);
+    // if (!checkIfEmpty(debouncedSearchTerm)) {
+    //   doFetch(`${BASE_URL}/name/${debouncedSearchTerm}`);
+    // }
   }, [debouncedSearchTerm]);
 
   const handleRegionChange = (region: string) => {

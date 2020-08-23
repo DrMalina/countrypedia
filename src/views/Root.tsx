@@ -3,12 +3,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Header } from 'components/Header';
+import { ScrollTop } from 'components/ScrollTop';
 import { CountryProvider } from 'context/CountryContext';
 import { routes } from 'routes';
 import { lightMode, darkMode } from 'theme';
 import { CountryPage } from 'views/CountryPage';
 import { HomePage } from 'views/HomePage';
-import { ScrollTop } from 'components/ScrollTop';
 
 const Root: FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
