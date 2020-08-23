@@ -1,5 +1,5 @@
-export const capitalizeFirstLetter = (str: string) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+export const convertToStartCase = (str: string): string => {
+  return str.charAt(0).toUpperCase() + str.slice(1).replace(/([A-Z])/g, ' $1');
 };
 
 type Value = string | number;

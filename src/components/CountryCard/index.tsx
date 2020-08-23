@@ -11,7 +11,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { SkeletonCard } from 'components/SkeletonCard';
-import { capitalizeFirstLetter, convertValueToLocale } from 'utils';
+import { convertToStartCase, convertValueToLocale } from 'utils';
 
 interface CountryCardProps {
   name: string;
@@ -76,7 +76,7 @@ export const CountryCard: FC<CountryCardProps> = (props) => {
                   {Object.entries(rest).map((element, idx) => (
                     <ListItem disableGutters key={idx}>
                       <Typography variant="body2" component="span" className={classes.listKey}>
-                        {capitalizeFirstLetter(element[0])}:&nbsp;
+                        {convertToStartCase(element[0])}:&nbsp;
                       </Typography>
                       <Typography variant="body2" component="span" className={classes.listValue}>
                         {convertValueToLocale(element[1])}
