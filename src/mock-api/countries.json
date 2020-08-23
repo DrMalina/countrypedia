@@ -134,6 +134,1167 @@
         }
       ],
       "cioc": "ALB"
+    },
+    {
+      "name": "Algeria",
+      "topLevelDomain": [".dz"],
+      "alpha2Code": "DZ",
+      "alpha3Code": "DZA",
+      "callingCodes": ["213"],
+      "capital": "Algiers",
+      "altSpellings": ["DZ", "Dzayer", "Algérie"],
+      "region": "Africa",
+      "subregion": "Northern Africa",
+      "population": 40400000,
+      "latlng": [28.0, 3.0],
+      "demonym": "Algerian",
+      "area": 2381741.0,
+      "gini": 35.3,
+      "timezones": ["UTC+01:00"],
+      "borders": ["TUN", "LBY", "NER", "ESH", "MRT", "MLI", "MAR"],
+      "nativeName": "الجزائر",
+      "numericCode": "012",
+      "currencies": [{ "code": "DZD", "name": "Algerian dinar", "symbol": "د.ج" }],
+      "languages": [
+        { "iso639_1": "ar", "iso639_2": "ara", "name": "Arabic", "nativeName": "العربية" }
+      ],
+      "translations": {
+        "de": "Algerien",
+        "es": "Argelia",
+        "fr": "Algérie",
+        "ja": "アルジェリア",
+        "it": "Algeria",
+        "br": "Argélia",
+        "pt": "Argélia",
+        "nl": "Algerije",
+        "hr": "Alžir",
+        "fa": "الجزایر"
+      },
+      "flag": "https://restcountries.eu/data/dza.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "AU",
+          "name": "African Union",
+          "otherAcronyms": [],
+          "otherNames": [
+            "الاتحاد الأفريقي",
+            "Union africaine",
+            "União Africana",
+            "Unión Africana",
+            "Umoja wa Afrika"
+          ]
+        },
+        {
+          "acronym": "AL",
+          "name": "Arab League",
+          "otherAcronyms": [],
+          "otherNames": [
+            "جامعة الدول العربية",
+            "Jāmiʻat ad-Duwal al-ʻArabīyah",
+            "League of Arab States"
+          ]
+        }
+      ],
+      "cioc": "ALG"
+    },
+    {
+      "name": "American Samoa",
+      "topLevelDomain": [".as"],
+      "alpha2Code": "AS",
+      "alpha3Code": "ASM",
+      "callingCodes": ["1684"],
+      "capital": "Pago Pago",
+      "altSpellings": ["AS", "Amerika Sāmoa", "Amelika Sāmoa", "Sāmoa Amelika"],
+      "region": "Oceania",
+      "subregion": "Polynesia",
+      "population": 57100,
+      "latlng": [-14.33333333, -170.0],
+      "demonym": "American Samoan",
+      "area": 199.0,
+      "gini": null,
+      "timezones": ["UTC-11:00"],
+      "borders": [],
+      "nativeName": "American Samoa",
+      "numericCode": "016",
+      "currencies": [{ "code": "USD", "name": "United State Dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" },
+        { "iso639_1": "sm", "iso639_2": "smo", "name": "Samoan", "nativeName": "gagana fa'a Samoa" }
+      ],
+      "translations": {
+        "de": "Amerikanisch-Samoa",
+        "es": "Samoa Americana",
+        "fr": "Samoa américaines",
+        "ja": "アメリカ領サモア",
+        "it": "Samoa Americane",
+        "br": "Samoa Americana",
+        "pt": "Samoa Americana",
+        "nl": "Amerikaans Samoa",
+        "hr": "Američka Samoa",
+        "fa": "ساموآی آمریکا"
+      },
+      "flag": "https://restcountries.eu/data/asm.svg",
+      "regionalBlocs": [],
+      "cioc": "ASA"
+    },
+    {
+      "name": "Andorra",
+      "topLevelDomain": [".ad"],
+      "alpha2Code": "AD",
+      "alpha3Code": "AND",
+      "callingCodes": ["376"],
+      "capital": "Andorra la Vella",
+      "altSpellings": ["AD", "Principality of Andorra", "Principat d'Andorra"],
+      "region": "Europe",
+      "subregion": "Southern Europe",
+      "population": 78014,
+      "latlng": [42.5, 1.5],
+      "demonym": "Andorran",
+      "area": 468.0,
+      "gini": null,
+      "timezones": ["UTC+01:00"],
+      "borders": ["FRA", "ESP"],
+      "nativeName": "Andorra",
+      "numericCode": "020",
+      "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
+      "languages": [
+        { "iso639_1": "ca", "iso639_2": "cat", "name": "Catalan", "nativeName": "català" }
+      ],
+      "translations": {
+        "de": "Andorra",
+        "es": "Andorra",
+        "fr": "Andorre",
+        "ja": "アンドラ",
+        "it": "Andorra",
+        "br": "Andorra",
+        "pt": "Andorra",
+        "nl": "Andorra",
+        "hr": "Andora",
+        "fa": "آندورا"
+      },
+      "flag": "https://restcountries.eu/data/and.svg",
+      "regionalBlocs": [],
+      "cioc": "AND"
+    },
+    {
+      "name": "Angola",
+      "topLevelDomain": [".ao"],
+      "alpha2Code": "AO",
+      "alpha3Code": "AGO",
+      "callingCodes": ["244"],
+      "capital": "Luanda",
+      "altSpellings": ["AO", "República de Angola", "ʁɛpublika de an'ɡɔla"],
+      "region": "Africa",
+      "subregion": "Middle Africa",
+      "population": 25868000,
+      "latlng": [-12.5, 18.5],
+      "demonym": "Angolan",
+      "area": 1246700.0,
+      "gini": 58.6,
+      "timezones": ["UTC+01:00"],
+      "borders": ["COG", "COD", "ZMB", "NAM"],
+      "nativeName": "Angola",
+      "numericCode": "024",
+      "currencies": [{ "code": "AOA", "name": "Angolan kwanza", "symbol": "Kz" }],
+      "languages": [
+        { "iso639_1": "pt", "iso639_2": "por", "name": "Portuguese", "nativeName": "Português" }
+      ],
+      "translations": {
+        "de": "Angola",
+        "es": "Angola",
+        "fr": "Angola",
+        "ja": "アンゴラ",
+        "it": "Angola",
+        "br": "Angola",
+        "pt": "Angola",
+        "nl": "Angola",
+        "hr": "Angola",
+        "fa": "آنگولا"
+      },
+      "flag": "https://restcountries.eu/data/ago.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "AU",
+          "name": "African Union",
+          "otherAcronyms": [],
+          "otherNames": [
+            "الاتحاد الأفريقي",
+            "Union africaine",
+            "União Africana",
+            "Unión Africana",
+            "Umoja wa Afrika"
+          ]
+        }
+      ],
+      "cioc": "ANG"
+    },
+    {
+      "name": "Anguilla",
+      "topLevelDomain": [".ai"],
+      "alpha2Code": "AI",
+      "alpha3Code": "AIA",
+      "callingCodes": ["1264"],
+      "capital": "The Valley",
+      "altSpellings": ["AI"],
+      "region": "Americas",
+      "subregion": "Caribbean",
+      "population": 13452,
+      "latlng": [18.25, -63.16666666],
+      "demonym": "Anguillian",
+      "area": 91.0,
+      "gini": null,
+      "timezones": ["UTC-04:00"],
+      "borders": [],
+      "nativeName": "Anguilla",
+      "numericCode": "660",
+      "currencies": [{ "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Anguilla",
+        "es": "Anguilla",
+        "fr": "Anguilla",
+        "ja": "アンギラ",
+        "it": "Anguilla",
+        "br": "Anguila",
+        "pt": "Anguila",
+        "nl": "Anguilla",
+        "hr": "Angvila",
+        "fa": "آنگویلا"
+      },
+      "flag": "https://restcountries.eu/data/aia.svg",
+      "regionalBlocs": [],
+      "cioc": ""
+    },
+    {
+      "name": "Antarctica",
+      "topLevelDomain": [".aq"],
+      "alpha2Code": "AQ",
+      "alpha3Code": "ATA",
+      "callingCodes": ["672"],
+      "capital": "",
+      "altSpellings": [],
+      "region": "Polar",
+      "subregion": "",
+      "population": 1000,
+      "latlng": [-74.65, 4.48],
+      "demonym": "",
+      "area": 1.4e7,
+      "gini": null,
+      "timezones": [
+        "UTC-03:00",
+        "UTC+03:00",
+        "UTC+05:00",
+        "UTC+06:00",
+        "UTC+07:00",
+        "UTC+08:00",
+        "UTC+10:00",
+        "UTC+12:00"
+      ],
+      "borders": [],
+      "nativeName": "Antarctica",
+      "numericCode": "010",
+      "currencies": [
+        { "code": "AUD", "name": "Australian dollar", "symbol": "$" },
+        { "code": "GBP", "name": "British pound", "symbol": "£" }
+      ],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" },
+        { "iso639_1": "ru", "iso639_2": "rus", "name": "Russian", "nativeName": "Русский" }
+      ],
+      "translations": {
+        "de": "Antarktika",
+        "es": "Antártida",
+        "fr": "Antarctique",
+        "ja": "南極大陸",
+        "it": "Antartide",
+        "br": "Antártida",
+        "pt": "Antárctida",
+        "nl": "Antarctica",
+        "hr": "Antarktika",
+        "fa": "جنوبگان"
+      },
+      "flag": "https://restcountries.eu/data/ata.svg",
+      "regionalBlocs": [],
+      "cioc": ""
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "topLevelDomain": [".ag"],
+      "alpha2Code": "AG",
+      "alpha3Code": "ATG",
+      "callingCodes": ["1268"],
+      "capital": "Saint John's",
+      "altSpellings": ["AG"],
+      "region": "Americas",
+      "subregion": "Caribbean",
+      "population": 86295,
+      "latlng": [17.05, -61.8],
+      "demonym": "Antiguan, Barbudan",
+      "area": 442.0,
+      "gini": null,
+      "timezones": ["UTC-04:00"],
+      "borders": [],
+      "nativeName": "Antigua and Barbuda",
+      "numericCode": "028",
+      "currencies": [{ "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Antigua und Barbuda",
+        "es": "Antigua y Barbuda",
+        "fr": "Antigua-et-Barbuda",
+        "ja": "アンティグア・バーブーダ",
+        "it": "Antigua e Barbuda",
+        "br": "Antígua e Barbuda",
+        "pt": "Antígua e Barbuda",
+        "nl": "Antigua en Barbuda",
+        "hr": "Antigva i Barbuda",
+        "fa": "آنتیگوا و باربودا"
+      },
+      "flag": "https://restcountries.eu/data/atg.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "CARICOM",
+          "name": "Caribbean Community",
+          "otherAcronyms": [],
+          "otherNames": ["Comunidad del Caribe", "Communauté Caribéenne", "Caribische Gemeenschap"]
+        }
+      ],
+      "cioc": "ANT"
+    },
+    {
+      "name": "Argentina",
+      "topLevelDomain": [".ar"],
+      "alpha2Code": "AR",
+      "alpha3Code": "ARG",
+      "callingCodes": ["54"],
+      "capital": "Buenos Aires",
+      "altSpellings": ["AR", "Argentine Republic", "República Argentina"],
+      "region": "Americas",
+      "subregion": "South America",
+      "population": 43590400,
+      "latlng": [-34.0, -64.0],
+      "demonym": "Argentinean",
+      "area": 2780400.0,
+      "gini": 44.5,
+      "timezones": ["UTC-03:00"],
+      "borders": ["BOL", "BRA", "CHL", "PRY", "URY"],
+      "nativeName": "Argentina",
+      "numericCode": "032",
+      "currencies": [{ "code": "ARS", "name": "Argentine peso", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "es", "iso639_2": "spa", "name": "Spanish", "nativeName": "Español" },
+        { "iso639_1": "gn", "iso639_2": "grn", "name": "Guaraní", "nativeName": "Avañe'ẽ" }
+      ],
+      "translations": {
+        "de": "Argentinien",
+        "es": "Argentina",
+        "fr": "Argentine",
+        "ja": "アルゼンチン",
+        "it": "Argentina",
+        "br": "Argentina",
+        "pt": "Argentina",
+        "nl": "Argentinië",
+        "hr": "Argentina",
+        "fa": "آرژانتین"
+      },
+      "flag": "https://restcountries.eu/data/arg.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "USAN",
+          "name": "Union of South American Nations",
+          "otherAcronyms": ["UNASUR", "UNASUL", "UZAN"],
+          "otherNames": [
+            "Unión de Naciones Suramericanas",
+            "União de Nações Sul-Americanas",
+            "Unie van Zuid-Amerikaanse Naties",
+            "South American Union"
+          ]
+        }
+      ],
+      "cioc": "ARG"
+    },
+    {
+      "name": "Armenia",
+      "topLevelDomain": [".am"],
+      "alpha2Code": "AM",
+      "alpha3Code": "ARM",
+      "callingCodes": ["374"],
+      "capital": "Yerevan",
+      "altSpellings": ["AM", "Hayastan", "Republic of Armenia", "Հայաստանի Հանրապետություն"],
+      "region": "Asia",
+      "subregion": "Western Asia",
+      "population": 2994400,
+      "latlng": [40.0, 45.0],
+      "demonym": "Armenian",
+      "area": 29743.0,
+      "gini": 30.9,
+      "timezones": ["UTC+04:00"],
+      "borders": ["AZE", "GEO", "IRN", "TUR"],
+      "nativeName": "Հայաստան",
+      "numericCode": "051",
+      "currencies": [{ "code": "AMD", "name": "Armenian dram", "symbol": null }],
+      "languages": [
+        { "iso639_1": "hy", "iso639_2": "hye", "name": "Armenian", "nativeName": "Հայերեն" },
+        { "iso639_1": "ru", "iso639_2": "rus", "name": "Russian", "nativeName": "Русский" }
+      ],
+      "translations": {
+        "de": "Armenien",
+        "es": "Armenia",
+        "fr": "Arménie",
+        "ja": "アルメニア",
+        "it": "Armenia",
+        "br": "Armênia",
+        "pt": "Arménia",
+        "nl": "Armenië",
+        "hr": "Armenija",
+        "fa": "ارمنستان"
+      },
+      "flag": "https://restcountries.eu/data/arm.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "EEU",
+          "name": "Eurasian Economic Union",
+          "otherAcronyms": ["EAEU"],
+          "otherNames": []
+        }
+      ],
+      "cioc": "ARM"
+    },
+    {
+      "name": "Aruba",
+      "topLevelDomain": [".aw"],
+      "alpha2Code": "AW",
+      "alpha3Code": "ABW",
+      "callingCodes": ["297"],
+      "capital": "Oranjestad",
+      "altSpellings": ["AW"],
+      "region": "Americas",
+      "subregion": "Caribbean",
+      "population": 107394,
+      "latlng": [12.5, -69.96666666],
+      "demonym": "Aruban",
+      "area": 180.0,
+      "gini": null,
+      "timezones": ["UTC-04:00"],
+      "borders": [],
+      "nativeName": "Aruba",
+      "numericCode": "533",
+      "currencies": [{ "code": "AWG", "name": "Aruban florin", "symbol": "ƒ" }],
+      "languages": [
+        { "iso639_1": "nl", "iso639_2": "nld", "name": "Dutch", "nativeName": "Nederlands" },
+        { "iso639_1": "pa", "iso639_2": "pan", "name": "(Eastern) Punjabi", "nativeName": "ਪੰਜਾਬੀ" }
+      ],
+      "translations": {
+        "de": "Aruba",
+        "es": "Aruba",
+        "fr": "Aruba",
+        "ja": "アルバ",
+        "it": "Aruba",
+        "br": "Aruba",
+        "pt": "Aruba",
+        "nl": "Aruba",
+        "hr": "Aruba",
+        "fa": "آروبا"
+      },
+      "flag": "https://restcountries.eu/data/abw.svg",
+      "regionalBlocs": [],
+      "cioc": "ARU"
+    },
+    {
+      "name": "Australia",
+      "topLevelDomain": [".au"],
+      "alpha2Code": "AU",
+      "alpha3Code": "AUS",
+      "callingCodes": ["61"],
+      "capital": "Canberra",
+      "altSpellings": ["AU"],
+      "region": "Oceania",
+      "subregion": "Australia and New Zealand",
+      "population": 24117360,
+      "latlng": [-27.0, 133.0],
+      "demonym": "Australian",
+      "area": 7692024.0,
+      "gini": 30.5,
+      "timezones": [
+        "UTC+05:00",
+        "UTC+06:30",
+        "UTC+07:00",
+        "UTC+08:00",
+        "UTC+09:30",
+        "UTC+10:00",
+        "UTC+10:30",
+        "UTC+11:30"
+      ],
+      "borders": [],
+      "nativeName": "Australia",
+      "numericCode": "036",
+      "currencies": [{ "code": "AUD", "name": "Australian dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Australien",
+        "es": "Australia",
+        "fr": "Australie",
+        "ja": "オーストラリア",
+        "it": "Australia",
+        "br": "Austrália",
+        "pt": "Austrália",
+        "nl": "Australië",
+        "hr": "Australija",
+        "fa": "استرالیا"
+      },
+      "flag": "https://restcountries.eu/data/aus.svg",
+      "regionalBlocs": [],
+      "cioc": "AUS"
+    },
+    {
+      "name": "Austria",
+      "topLevelDomain": [".at"],
+      "alpha2Code": "AT",
+      "alpha3Code": "AUT",
+      "callingCodes": ["43"],
+      "capital": "Vienna",
+      "altSpellings": ["AT", "Österreich", "Osterreich", "Oesterreich"],
+      "region": "Europe",
+      "subregion": "Western Europe",
+      "population": 8725931,
+      "latlng": [47.33333333, 13.33333333],
+      "demonym": "Austrian",
+      "area": 83871.0,
+      "gini": 26.0,
+      "timezones": ["UTC+01:00"],
+      "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
+      "nativeName": "Österreich",
+      "numericCode": "040",
+      "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
+      "languages": [
+        { "iso639_1": "de", "iso639_2": "deu", "name": "German", "nativeName": "Deutsch" }
+      ],
+      "translations": {
+        "de": "Österreich",
+        "es": "Austria",
+        "fr": "Autriche",
+        "ja": "オーストリア",
+        "it": "Austria",
+        "br": "áustria",
+        "pt": "áustria",
+        "nl": "Oostenrijk",
+        "hr": "Austrija",
+        "fa": "اتریش"
+      },
+      "flag": "https://restcountries.eu/data/aut.svg",
+      "regionalBlocs": [
+        { "acronym": "EU", "name": "European Union", "otherAcronyms": [], "otherNames": [] }
+      ],
+      "cioc": "AUT"
+    },
+    {
+      "name": "Azerbaijan",
+      "topLevelDomain": [".az"],
+      "alpha2Code": "AZ",
+      "alpha3Code": "AZE",
+      "callingCodes": ["994"],
+      "capital": "Baku",
+      "altSpellings": ["AZ", "Republic of Azerbaijan", "Azərbaycan Respublikası"],
+      "region": "Asia",
+      "subregion": "Western Asia",
+      "population": 9730500,
+      "latlng": [40.5, 47.5],
+      "demonym": "Azerbaijani",
+      "area": 86600.0,
+      "gini": 33.7,
+      "timezones": ["UTC+04:00"],
+      "borders": ["ARM", "GEO", "IRN", "RUS", "TUR"],
+      "nativeName": "Azərbaycan",
+      "numericCode": "031",
+      "currencies": [{ "code": "AZN", "name": "Azerbaijani manat", "symbol": null }],
+      "languages": [
+        {
+          "iso639_1": "az",
+          "iso639_2": "aze",
+          "name": "Azerbaijani",
+          "nativeName": "azərbaycan dili"
+        }
+      ],
+      "translations": {
+        "de": "Aserbaidschan",
+        "es": "Azerbaiyán",
+        "fr": "Azerbaïdjan",
+        "ja": "アゼルバイジャン",
+        "it": "Azerbaijan",
+        "br": "Azerbaijão",
+        "pt": "Azerbaijão",
+        "nl": "Azerbeidzjan",
+        "hr": "Azerbajdžan",
+        "fa": "آذربایجان"
+      },
+      "flag": "https://restcountries.eu/data/aze.svg",
+      "regionalBlocs": [],
+      "cioc": "AZE"
+    },
+    {
+      "name": "Bahamas",
+      "topLevelDomain": [".bs"],
+      "alpha2Code": "BS",
+      "alpha3Code": "BHS",
+      "callingCodes": ["1242"],
+      "capital": "Nassau",
+      "altSpellings": ["BS", "Commonwealth of the Bahamas"],
+      "region": "Americas",
+      "subregion": "Caribbean",
+      "population": 378040,
+      "latlng": [24.25, -76.0],
+      "demonym": "Bahamian",
+      "area": 13943.0,
+      "gini": null,
+      "timezones": ["UTC-05:00"],
+      "borders": [],
+      "nativeName": "Bahamas",
+      "numericCode": "044",
+      "currencies": [{ "code": "BSD", "name": "Bahamian dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Bahamas",
+        "es": "Bahamas",
+        "fr": "Bahamas",
+        "ja": "バハマ",
+        "it": "Bahamas",
+        "br": "Bahamas",
+        "pt": "Baamas",
+        "nl": "Bahama’s",
+        "hr": "Bahami",
+        "fa": "باهاما"
+      },
+      "flag": "https://restcountries.eu/data/bhs.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "CARICOM",
+          "name": "Caribbean Community",
+          "otherAcronyms": [],
+          "otherNames": ["Comunidad del Caribe", "Communauté Caribéenne", "Caribische Gemeenschap"]
+        }
+      ],
+      "cioc": "BAH"
+    },
+    {
+      "name": "Bahrain",
+      "topLevelDomain": [".bh"],
+      "alpha2Code": "BH",
+      "alpha3Code": "BHR",
+      "callingCodes": ["973"],
+      "capital": "Manama",
+      "altSpellings": ["BH", "Kingdom of Bahrain", "Mamlakat al-Baḥrayn"],
+      "region": "Asia",
+      "subregion": "Western Asia",
+      "population": 1404900,
+      "latlng": [26.0, 50.55],
+      "demonym": "Bahraini",
+      "area": 765.0,
+      "gini": null,
+      "timezones": ["UTC+03:00"],
+      "borders": [],
+      "nativeName": "‏البحرين",
+      "numericCode": "048",
+      "currencies": [{ "code": "BHD", "name": "Bahraini dinar", "symbol": ".د.ب" }],
+      "languages": [
+        { "iso639_1": "ar", "iso639_2": "ara", "name": "Arabic", "nativeName": "العربية" }
+      ],
+      "translations": {
+        "de": "Bahrain",
+        "es": "Bahrein",
+        "fr": "Bahreïn",
+        "ja": "バーレーン",
+        "it": "Bahrein",
+        "br": "Bahrein",
+        "pt": "Barém",
+        "nl": "Bahrein",
+        "hr": "Bahrein",
+        "fa": "بحرین"
+      },
+      "flag": "https://restcountries.eu/data/bhr.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "AL",
+          "name": "Arab League",
+          "otherAcronyms": [],
+          "otherNames": [
+            "جامعة الدول العربية",
+            "Jāmiʻat ad-Duwal al-ʻArabīyah",
+            "League of Arab States"
+          ]
+        }
+      ],
+      "cioc": "BRN"
+    },
+    {
+      "name": "Bangladesh",
+      "topLevelDomain": [".bd"],
+      "alpha2Code": "BD",
+      "alpha3Code": "BGD",
+      "callingCodes": ["880"],
+      "capital": "Dhaka",
+      "altSpellings": ["BD", "People's Republic of Bangladesh", "Gônôprôjatôntri Bangladesh"],
+      "region": "Asia",
+      "subregion": "Southern Asia",
+      "population": 161006790,
+      "latlng": [24.0, 90.0],
+      "demonym": "Bangladeshi",
+      "area": 147570.0,
+      "gini": 32.1,
+      "timezones": ["UTC+06:00"],
+      "borders": ["MMR", "IND"],
+      "nativeName": "Bangladesh",
+      "numericCode": "050",
+      "currencies": [{ "code": "BDT", "name": "Bangladeshi taka", "symbol": "৳" }],
+      "languages": [
+        { "iso639_1": "bn", "iso639_2": "ben", "name": "Bengali", "nativeName": "বাংলা" }
+      ],
+      "translations": {
+        "de": "Bangladesch",
+        "es": "Bangladesh",
+        "fr": "Bangladesh",
+        "ja": "バングラデシュ",
+        "it": "Bangladesh",
+        "br": "Bangladesh",
+        "pt": "Bangladeche",
+        "nl": "Bangladesh",
+        "hr": "Bangladeš",
+        "fa": "بنگلادش"
+      },
+      "flag": "https://restcountries.eu/data/bgd.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "SAARC",
+          "name": "South Asian Association for Regional Cooperation",
+          "otherAcronyms": [],
+          "otherNames": []
+        }
+      ],
+      "cioc": "BAN"
+    },
+    {
+      "name": "Barbados",
+      "topLevelDomain": [".bb"],
+      "alpha2Code": "BB",
+      "alpha3Code": "BRB",
+      "callingCodes": ["1246"],
+      "capital": "Bridgetown",
+      "altSpellings": ["BB"],
+      "region": "Americas",
+      "subregion": "Caribbean",
+      "population": 285000,
+      "latlng": [13.16666666, -59.53333333],
+      "demonym": "Barbadian",
+      "area": 430.0,
+      "gini": null,
+      "timezones": ["UTC-04:00"],
+      "borders": [],
+      "nativeName": "Barbados",
+      "numericCode": "052",
+      "currencies": [{ "code": "BBD", "name": "Barbadian dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Barbados",
+        "es": "Barbados",
+        "fr": "Barbade",
+        "ja": "バルバドス",
+        "it": "Barbados",
+        "br": "Barbados",
+        "pt": "Barbados",
+        "nl": "Barbados",
+        "hr": "Barbados",
+        "fa": "باربادوس"
+      },
+      "flag": "https://restcountries.eu/data/brb.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "CARICOM",
+          "name": "Caribbean Community",
+          "otherAcronyms": [],
+          "otherNames": ["Comunidad del Caribe", "Communauté Caribéenne", "Caribische Gemeenschap"]
+        }
+      ],
+      "cioc": "BAR"
+    },
+    {
+      "name": "Belarus",
+      "topLevelDomain": [".by"],
+      "alpha2Code": "BY",
+      "alpha3Code": "BLR",
+      "callingCodes": ["375"],
+      "capital": "Minsk",
+      "altSpellings": [
+        "BY",
+        "Bielaruś",
+        "Republic of Belarus",
+        "Белоруссия",
+        "Республика Беларусь",
+        "Belorussiya",
+        "Respublika Belarus’"
+      ],
+      "region": "Europe",
+      "subregion": "Eastern Europe",
+      "population": 9498700,
+      "latlng": [53.0, 28.0],
+      "demonym": "Belarusian",
+      "area": 207600.0,
+      "gini": 26.5,
+      "timezones": ["UTC+03:00"],
+      "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
+      "nativeName": "Белару́сь",
+      "numericCode": "112",
+      "currencies": [
+        { "code": "BYN", "name": "New Belarusian ruble", "symbol": "Br" },
+        { "code": "BYR", "name": "Old Belarusian ruble", "symbol": "Br" }
+      ],
+      "languages": [
+        {
+          "iso639_1": "be",
+          "iso639_2": "bel",
+          "name": "Belarusian",
+          "nativeName": "беларуская мова"
+        },
+        { "iso639_1": "ru", "iso639_2": "rus", "name": "Russian", "nativeName": "Русский" }
+      ],
+      "translations": {
+        "de": "Weißrussland",
+        "es": "Bielorrusia",
+        "fr": "Biélorussie",
+        "ja": "ベラルーシ",
+        "it": "Bielorussia",
+        "br": "Bielorrússia",
+        "pt": "Bielorrússia",
+        "nl": "Wit-Rusland",
+        "hr": "Bjelorusija",
+        "fa": "بلاروس"
+      },
+      "flag": "https://restcountries.eu/data/blr.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "EEU",
+          "name": "Eurasian Economic Union",
+          "otherAcronyms": ["EAEU"],
+          "otherNames": []
+        }
+      ],
+      "cioc": "BLR"
+    },
+    {
+      "name": "Belgium",
+      "topLevelDomain": [".be"],
+      "alpha2Code": "BE",
+      "alpha3Code": "BEL",
+      "callingCodes": ["32"],
+      "capital": "Brussels",
+      "altSpellings": [
+        "BE",
+        "België",
+        "Belgie",
+        "Belgien",
+        "Belgique",
+        "Kingdom of Belgium",
+        "Koninkrijk België",
+        "Royaume de Belgique",
+        "Königreich Belgien"
+      ],
+      "region": "Europe",
+      "subregion": "Western Europe",
+      "population": 11319511,
+      "latlng": [50.83333333, 4.0],
+      "demonym": "Belgian",
+      "area": 30528.0,
+      "gini": 33.0,
+      "timezones": ["UTC+01:00"],
+      "borders": ["FRA", "DEU", "LUX", "NLD"],
+      "nativeName": "België",
+      "numericCode": "056",
+      "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
+      "languages": [
+        { "iso639_1": "nl", "iso639_2": "nld", "name": "Dutch", "nativeName": "Nederlands" },
+        { "iso639_1": "fr", "iso639_2": "fra", "name": "French", "nativeName": "français" },
+        { "iso639_1": "de", "iso639_2": "deu", "name": "German", "nativeName": "Deutsch" }
+      ],
+      "translations": {
+        "de": "Belgien",
+        "es": "Bélgica",
+        "fr": "Belgique",
+        "ja": "ベルギー",
+        "it": "Belgio",
+        "br": "Bélgica",
+        "pt": "Bélgica",
+        "nl": "België",
+        "hr": "Belgija",
+        "fa": "بلژیک"
+      },
+      "flag": "https://restcountries.eu/data/bel.svg",
+      "regionalBlocs": [
+        { "acronym": "EU", "name": "European Union", "otherAcronyms": [], "otherNames": [] }
+      ],
+      "cioc": "BEL"
+    },
+    {
+      "name": "Belize",
+      "topLevelDomain": [".bz"],
+      "alpha2Code": "BZ",
+      "alpha3Code": "BLZ",
+      "callingCodes": ["501"],
+      "capital": "Belmopan",
+      "altSpellings": ["BZ"],
+      "region": "Americas",
+      "subregion": "Central America",
+      "population": 370300,
+      "latlng": [17.25, -88.75],
+      "demonym": "Belizean",
+      "area": 22966.0,
+      "gini": 53.1,
+      "timezones": ["UTC-06:00"],
+      "borders": ["GTM", "MEX"],
+      "nativeName": "Belize",
+      "numericCode": "084",
+      "currencies": [{ "code": "BZD", "name": "Belize dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" },
+        { "iso639_1": "es", "iso639_2": "spa", "name": "Spanish", "nativeName": "Español" }
+      ],
+      "translations": {
+        "de": "Belize",
+        "es": "Belice",
+        "fr": "Belize",
+        "ja": "ベリーズ",
+        "it": "Belize",
+        "br": "Belize",
+        "pt": "Belize",
+        "nl": "Belize",
+        "hr": "Belize",
+        "fa": "بلیز"
+      },
+      "flag": "https://restcountries.eu/data/blz.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "CARICOM",
+          "name": "Caribbean Community",
+          "otherAcronyms": [],
+          "otherNames": ["Comunidad del Caribe", "Communauté Caribéenne", "Caribische Gemeenschap"]
+        },
+        {
+          "acronym": "CAIS",
+          "name": "Central American Integration System",
+          "otherAcronyms": ["SICA"],
+          "otherNames": ["Sistema de la Integración Centroamericana,"]
+        }
+      ],
+      "cioc": "BIZ"
+    },
+    {
+      "name": "Benin",
+      "topLevelDomain": [".bj"],
+      "alpha2Code": "BJ",
+      "alpha3Code": "BEN",
+      "callingCodes": ["229"],
+      "capital": "Porto-Novo",
+      "altSpellings": ["BJ", "Republic of Benin", "République du Bénin"],
+      "region": "Africa",
+      "subregion": "Western Africa",
+      "population": 10653654,
+      "latlng": [9.5, 2.25],
+      "demonym": "Beninese",
+      "area": 112622.0,
+      "gini": 38.6,
+      "timezones": ["UTC+01:00"],
+      "borders": ["BFA", "NER", "NGA", "TGO"],
+      "nativeName": "Bénin",
+      "numericCode": "204",
+      "currencies": [{ "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }],
+      "languages": [
+        { "iso639_1": "fr", "iso639_2": "fra", "name": "French", "nativeName": "français" }
+      ],
+      "translations": {
+        "de": "Benin",
+        "es": "Benín",
+        "fr": "Bénin",
+        "ja": "ベナン",
+        "it": "Benin",
+        "br": "Benin",
+        "pt": "Benim",
+        "nl": "Benin",
+        "hr": "Benin",
+        "fa": "بنین"
+      },
+      "flag": "https://restcountries.eu/data/ben.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "AU",
+          "name": "African Union",
+          "otherAcronyms": [],
+          "otherNames": [
+            "الاتحاد الأفريقي",
+            "Union africaine",
+            "União Africana",
+            "Unión Africana",
+            "Umoja wa Afrika"
+          ]
+        }
+      ],
+      "cioc": "BEN"
+    },
+    {
+      "name": "Bermuda",
+      "topLevelDomain": [".bm"],
+      "alpha2Code": "BM",
+      "alpha3Code": "BMU",
+      "callingCodes": ["1441"],
+      "capital": "Hamilton",
+      "altSpellings": ["BM", "The Islands of Bermuda", "The Bermudas", "Somers Isles"],
+      "region": "Americas",
+      "subregion": "Northern America",
+      "population": 61954,
+      "latlng": [32.33333333, -64.75],
+      "demonym": "Bermudian",
+      "area": 54.0,
+      "gini": null,
+      "timezones": ["UTC-04:00"],
+      "borders": [],
+      "nativeName": "Bermuda",
+      "numericCode": "060",
+      "currencies": [{ "code": "BMD", "name": "Bermudian dollar", "symbol": "$" }],
+      "languages": [
+        { "iso639_1": "en", "iso639_2": "eng", "name": "English", "nativeName": "English" }
+      ],
+      "translations": {
+        "de": "Bermuda",
+        "es": "Bermudas",
+        "fr": "Bermudes",
+        "ja": "バミューダ",
+        "it": "Bermuda",
+        "br": "Bermudas",
+        "pt": "Bermudas",
+        "nl": "Bermuda",
+        "hr": "Bermudi",
+        "fa": "برمودا"
+      },
+      "flag": "https://restcountries.eu/data/bmu.svg",
+      "regionalBlocs": [],
+      "cioc": "BER"
+    },
+    {
+      "name": "Bhutan",
+      "topLevelDomain": [".bt"],
+      "alpha2Code": "BT",
+      "alpha3Code": "BTN",
+      "callingCodes": ["975"],
+      "capital": "Thimphu",
+      "altSpellings": ["BT", "Kingdom of Bhutan"],
+      "region": "Asia",
+      "subregion": "Southern Asia",
+      "population": 775620,
+      "latlng": [27.5, 90.5],
+      "demonym": "Bhutanese",
+      "area": 38394.0,
+      "gini": 38.1,
+      "timezones": ["UTC+06:00"],
+      "borders": ["CHN", "IND"],
+      "nativeName": "ʼbrug-yul",
+      "numericCode": "064",
+      "currencies": [
+        { "code": "BTN", "name": "Bhutanese ngultrum", "symbol": "Nu." },
+        { "code": "INR", "name": "Indian rupee", "symbol": "₹" }
+      ],
+      "languages": [
+        { "iso639_1": "dz", "iso639_2": "dzo", "name": "Dzongkha", "nativeName": "རྫོང་ཁ" }
+      ],
+      "translations": {
+        "de": "Bhutan",
+        "es": "Bután",
+        "fr": "Bhoutan",
+        "ja": "ブータン",
+        "it": "Bhutan",
+        "br": "Butão",
+        "pt": "Butão",
+        "nl": "Bhutan",
+        "hr": "Butan",
+        "fa": "بوتان"
+      },
+      "flag": "https://restcountries.eu/data/btn.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "SAARC",
+          "name": "South Asian Association for Regional Cooperation",
+          "otherAcronyms": [],
+          "otherNames": []
+        }
+      ],
+      "cioc": "BHU"
+    },
+    {
+      "name": "Bolivia (Plurinational State of)",
+      "topLevelDomain": [".bo"],
+      "alpha2Code": "BO",
+      "alpha3Code": "BOL",
+      "callingCodes": ["591"],
+      "capital": "Sucre",
+      "altSpellings": [
+        "BO",
+        "Buliwya",
+        "Wuliwya",
+        "Plurinational State of Bolivia",
+        "Estado Plurinacional de Bolivia",
+        "Buliwya Mamallaqta",
+        "Wuliwya Suyu",
+        "Tetã Volívia"
+      ],
+      "region": "Americas",
+      "subregion": "South America",
+      "population": 10985059,
+      "latlng": [-17.0, -65.0],
+      "demonym": "Bolivian",
+      "area": 1098581.0,
+      "gini": 56.3,
+      "timezones": ["UTC-04:00"],
+      "borders": ["ARG", "BRA", "CHL", "PRY", "PER"],
+      "nativeName": "Bolivia",
+      "numericCode": "068",
+      "currencies": [{ "code": "BOB", "name": "Bolivian boliviano", "symbol": "Bs." }],
+      "languages": [
+        { "iso639_1": "es", "iso639_2": "spa", "name": "Spanish", "nativeName": "Español" },
+        { "iso639_1": "ay", "iso639_2": "aym", "name": "Aymara", "nativeName": "aymar aru" },
+        { "iso639_1": "qu", "iso639_2": "que", "name": "Quechua", "nativeName": "Runa Simi" }
+      ],
+      "translations": {
+        "de": "Bolivien",
+        "es": "Bolivia",
+        "fr": "Bolivie",
+        "ja": "ボリビア多民族国",
+        "it": "Bolivia",
+        "br": "Bolívia",
+        "pt": "Bolívia",
+        "nl": "Bolivia",
+        "hr": "Bolivija",
+        "fa": "بولیوی"
+      },
+      "flag": "https://restcountries.eu/data/bol.svg",
+      "regionalBlocs": [
+        {
+          "acronym": "USAN",
+          "name": "Union of South American Nations",
+          "otherAcronyms": ["UNASUR", "UNASUL", "UZAN"],
+          "otherNames": [
+            "Unión de Naciones Suramericanas",
+            "União de Nações Sul-Americanas",
+            "Unie van Zuid-Amerikaanse Naties",
+            "South American Union"
+          ]
+        }
+      ],
+      "cioc": "BOL"
     }
   ]
 }
