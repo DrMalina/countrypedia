@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import slugify from 'slugify';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -31,26 +31,32 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: 0,
     },
     info: {
-      marginLeft: theme.spacing(6),
+      marginLeft: 0,
+      marginTop: theme.spacing(3),
+      paddingBottom: theme.spacing(8),
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(6),
+        marginTop: 0,
+      },
     },
     wrapper: {
       marginTop: theme.spacing(8),
       flexGrow: 1,
     },
     imageContainer: {
-      height: '575px',
-      width: '100%',
-      border: '1px solid black',
+      height: 'auto',
+      maxWidth: '100%',
     },
     image: {
-      height: '100%',
+      height: 'auto',
       width: '100%',
+      boxShadow: '0 0 4px 1px rgba(0,0,0,.1)',
     },
   }),
 );
 
 export const CountryPage: FC = () => {
-  const { state } = useLocation();
+  const location = useLocation();
   const { countries } = useCountries();
   const [country, setCountry] = useState<Country | null>(null);
   const [neighbors, setNeighbors] = useState<Neighbor[]>([]);
@@ -60,76 +66,88 @@ export const CountryPage: FC = () => {
     const neighbor = countries.find((country) => country.alpha3Code === alphaCode);
 
     if (neighbor) {
-      setNeighbors([
-        ...neighbors,
+      setNeighbors((prevState) => [
+        ...prevState,
         { name: neighbor.name, slug: slugify(neighbor.name, { lower: true }) },
       ]);
     }
   };
 
+  // on location change, find country matching new url
   useEffect(() => {
-    const result = countries.find((country) => country.name === state);
+    //reset scroll
+    window.scrollTo(0, 0);
+    setNeighbors([]);
+    const result = countries.find((country) => country.name === location.state);
+
     if (result) {
       setCountry(result);
     }
-  }, [countries]);
+  }, [location]);
 
+  // when country changes, find its new neighbors
   useEffect(() => {
+    // each neighbor (border country) is saved as alpha3Code
     if (country) {
       country.borders.forEach((alphaCode) => findNeighbor(alphaCode));
     }
   }, [country]);
 
   return (
-    <>
-      <Container maxWidth="lg" className={classes.root}>
-        <Button variant="contained" color="secondary" startIcon={<KeyboardBackspaceIcon />}>
-          Back
-        </Button>
-        {country ? (
-          <Grid container className={classes.wrapper} alignItems="center">
-            <Grid item xs={12} md={6} className={classes.imageContainer}>
-              <img src={country.flag} alt={`Flag of a ${country.name}`} className={classes.image} />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box className={classes.info}>
-                <Typography variant="h5" component="h2" className={classes.title}>
-                  {country.name}
-                </Typography>
-                <CountryDetails
-                  details={{
-                    nativeName: country.nativeName,
-                    population: country.population,
-                    region: country.region,
-                    subregion: country.subregion,
-                    capital: country.capital,
-                    topLevelDomain: country.topLevelDomain,
-                    currencies: country.currencies,
-                    languages: country.languages,
-                  }}
-                />
-                <Typography variant="h6" component="h3" className={classes.subtitle}>
-                  Border Countries:
-                </Typography>
-                <Grid container component="ul" className={classes.list} spacing={1}>
-                  <NeighborList neighbors={neighbors} />
-                  {/* {country.borders.map((country) => (
-                    <Grid item xs={12} sm={4} key={country}>
-                      <Card>
-                        <CardActionArea>
-                          <Paper>
-                            <ListItem className={classes.borderCountry}>{country}</ListItem>
-                          </Paper>
-                        </CardActionArea>
-                      </Card>
-                    </Grid>
-                  ))} */}
-                </Grid>
-              </Box>
-            </Grid>
+    <Container maxWidth="lg" className={classes.root}>
+      <Button
+        variant="contained"
+        color="secondary"
+        startIcon={<KeyboardBackspaceIcon />}
+        component={RouterLink}
+        to="/"
+      >
+        Back
+      </Button>
+      {country ? (
+        <Grid container className={classes.wrapper} alignItems="center">
+          <Grid item xs={12} md={6} className={classes.imageContainer}>
+            <img src={country.flag} alt={`Flag of a ${country.name}`} className={classes.image} />
           </Grid>
-        ) : null}
-      </Container>
-    </>
+          <Grid item xs={12} md={6}>
+            <Box className={classes.info}>
+              <Typography variant="h5" component="h2" className={classes.title}>
+                {country.name}
+              </Typography>
+              <CountryDetails
+                details={{
+                  nativeName: country.nativeName,
+                  population: country.population,
+                  region: country.region,
+                  subregion: country.subregion,
+                  capital: country.capital,
+                  topLevelDomain: country.topLevelDomain,
+                  currencies: country.currencies,
+                  languages: country.languages,
+                }}
+              />
+              <Typography variant="h6" component="h3" className={classes.subtitle}>
+                Border Countries:
+              </Typography>
+              <Grid container component="ul" className={classes.list} spacing={1}>
+                <NeighborList neighbors={neighbors} />
+              </Grid>
+            </Box>
+          </Grid>
+        </Grid>
+      ) : (
+        <Grid item xs={12}>
+          <Typography
+            variant="h5"
+            component="h2"
+            display="block"
+            align="center"
+            className={classes.root}
+          >
+            No country found...
+          </Typography>
+        </Grid>
+      )}
+    </Container>
   );
 };
