@@ -16,7 +16,10 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      marginTop: theme.spacing(10),
+      marginTop: theme.spacing(6),
+      [theme.breakpoints.up('sm')]: {
+        marginTop: theme.spacing(10),
+      },
     },
     status: {
       marginTop: theme.spacing(12),

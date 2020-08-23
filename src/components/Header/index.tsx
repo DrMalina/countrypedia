@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import Brightness2OutlinedIcon from '@material-ui/icons/Brightness2Outlined';
@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,6 +31,8 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ handleChange }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <>
@@ -37,7 +40,11 @@ export const Header: FC<HeaderProps> = ({ handleChange }) => {
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Link component="button" color="textPrimary" underline="none" className={classes.title}>
-              <Typography variant="h5" component="h1" className={classes.heading}>
+              <Typography
+                variant={matches ? 'h5' : 'h6'}
+                component="h1"
+                className={classes.heading}
+              >
                 Where In The World?
               </Typography>
             </Link>

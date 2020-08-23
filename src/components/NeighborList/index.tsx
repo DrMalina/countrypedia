@@ -15,6 +15,9 @@ interface BorderListProps {
 }
 const useStyles = makeStyles(() =>
   createStyles({
+    container: {
+      alignSelf: 'center',
+    },
     list: {
       listStyle: 'none',
       paddingLeft: 0,
@@ -30,9 +33,9 @@ export const NeighborList: FC<BorderListProps> = ({ neighbors = [] }) => {
   return (
     <>
       {neighbors.length ? (
-        <Grid container component="ul" className={classes.list} spacing={1}>
+        <Grid container component="ul" className={classes.list} spacing={2}>
           {neighbors.map((neighbor) => (
-            <Grid item xs={12} sm={4} key={neighbor.name}>
+            <Grid item xs={12} sm={4} key={neighbor.name} className={classes.container}>
               <Link
                 underline="none"
                 component={RouterLink}

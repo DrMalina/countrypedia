@@ -55,7 +55,7 @@ export const CountryDetails: FC<CountryDetailsProps> = ({ details }) => {
     <Grid container component="ul" className={classes.list}>
       {Object.entries(details).map(([key, value]) => (
         <Grid key={key} item xs={12} sm={6}>
-          <ListItem disableGutters dense>
+          <ListItem disableGutters dense alignItems="flex-start">
             <Typography variant="subtitle1" component="span" className={classes.key}>
               {convertToStartCase(key)}:&nbsp;
             </Typography>
