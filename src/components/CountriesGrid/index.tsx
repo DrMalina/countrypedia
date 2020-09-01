@@ -47,7 +47,7 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ results, isLoading, isSe
       ) : (
         // when there is other error
         <Typography variant="h5" component="h2" className={classes.status}>
-          Ups! Something went wrong... (Error: `${error.status}`)
+          Ups! Something went wrong...
         </Typography>
       );
     } else {
