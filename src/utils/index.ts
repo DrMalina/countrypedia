@@ -10,6 +10,6 @@ export const convertValueToLocale = (element: Value): Value => {
   return isNaN(+element) ? element : element.toLocaleString();
 };
 
-export const checkIfEmpty = (str: string): Boolean => {
+export const checkIfEmpty = (str: string): boolean => {
   return str.length === 0 || !str.trim();
 };
