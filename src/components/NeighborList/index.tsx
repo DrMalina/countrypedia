@@ -24,6 +24,8 @@ const useStyles = makeStyles(() =>
     },
     borderCountry: {
       justifyContent: 'center',
+      paddingTop: '12px',
+      paddingBottom: '12px',
     },
   }),
 );
@@ -47,7 +49,11 @@ export const NeighborList: FC<BorderListProps> = ({ neighbors = [] }) => {
                 <Card>
                   <CardActionArea>
                     <Paper>
-                      <ListItem className={classes.borderCountry}>{neighbor.name}</ListItem>
+                      <ListItem className={classes.borderCountry}>
+                        <Typography variant="subtitle1" component="span">
+                          {neighbor.name}
+                        </Typography>
+                      </ListItem>
                     </Paper>
                   </CardActionArea>
                 </Card>
