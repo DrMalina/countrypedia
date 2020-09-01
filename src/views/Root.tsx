@@ -5,6 +5,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Header } from 'components/Header';
 import { ScrollTop } from 'components/ScrollTop';
 import { CountryProvider } from 'context/CountryContext';
+import { RegionsProvider } from 'context/RegionsContext';
 import { routes } from 'routes';
 import { lightMode, darkMode } from 'theme';
 import { CountryPage } from 'views/CountryPage';
@@ -33,10 +34,12 @@ const Root: FC = () => {
         <Header handleChange={handleChange} />
         <main style={{ maxWidth: '100vw', overflow: 'hidden', paddingBottom: '10rem' }}>
           <CountryProvider>
-            <Switch>
-              <Route exact path={routes.home} component={HomePage} />
-              <Route path={routes.country} component={CountryPage} />
-            </Switch>
+            <RegionsProvider>
+              <Switch>
+                <Route exact path={routes.home} component={HomePage} />
+                <Route path={routes.country} component={CountryPage} />
+              </Switch>
+            </RegionsProvider>
           </CountryProvider>
         </main>
         <ScrollTop />
