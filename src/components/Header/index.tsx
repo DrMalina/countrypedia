@@ -26,10 +26,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface HeaderProps {
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  currentTheme: 'dark' | 'light';
+  handleThemeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Header: FC<HeaderProps> = ({ handleChange }) => {
+export const Header: FC<HeaderProps> = ({ currentTheme, handleThemeChange }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
@@ -50,7 +51,8 @@ export const Header: FC<HeaderProps> = ({ handleChange }) => {
             </Link>
             <Brightness5OutlinedIcon />
             <Switch
-              onChange={handleChange}
+              onChange={handleThemeChange}
+              checked={currentTheme === 'dark'}
               name="darkModeSwitch"
               inputProps={{ 'aria-label': 'dark mode switch' }}
             />

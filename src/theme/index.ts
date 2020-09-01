@@ -1,4 +1,4 @@
-export const lightMode = {
+export const lightThemePallete = {
   primary: {
     light: '#ffffff',
     main: '#fafafa',
@@ -12,7 +12,7 @@ export const lightMode = {
   },
 };
 
-export const darkMode = {
+export const darkThemePallete = {
   primary: {
     light: '#62727b',
     main: '#37474f',
