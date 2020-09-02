@@ -12,6 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { SkeletonCard } from 'components/SkeletonCard';
 import { convertToStartCase, convertValueToLocale } from 'utils';
+import { useInView } from 'react-intersection-observer';
 
 interface CountryCardProps {
   name: string;
@@ -41,8 +42,12 @@ export const CountryCard: FC<CountryCardProps> = (props) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const { name, flag, ...rest } = props;
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 250);
+    const timer = setTimeout(() => setIsVisible(true), 120);
 
     return () => clearTimeout(timer);
   }, []);
@@ -50,8 +55,8 @@ export const CountryCard: FC<CountryCardProps> = (props) => {
   const classes = useStyles();
 
   return (
-    <>
-      {!isVisible ? (
+    <div ref={ref}>
+      {!isVisible || !inView ? (
         <SkeletonCard />
       ) : (
         <Link
@@ -89,6 +94,6 @@ export const CountryCard: FC<CountryCardProps> = (props) => {
           </Card>
         </Link>
       )}
-    </>
+    </div>
   );
 };
