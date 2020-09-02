@@ -28,10 +28,11 @@ const useStyles = makeStyles(() =>
       paddingLeft: 0,
     },
     key: {
-      fontWeight: 400,
+      fontWeight: 500,
     },
     value: {
       fontWeight: 300,
+      fontStyle: 'italic',
     },
   }),
 );

@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       fontWeight: 700,
+      textTransform: 'uppercase',
     },
     subtitle: {
       fontWeight: 400,
