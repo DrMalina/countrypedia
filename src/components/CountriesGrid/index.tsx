@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { CountryCard } from 'components/CountryCard';
+import { CountriesChunk } from 'components/CountriesChunk';
 import { SkeletonCard } from 'components/SkeletonCard';
 import { Country as CountryData, Error } from 'types';
+import { chunkArray } from 'utils';
 
 interface CountriesGridProps {
   results: CountryData[];
@@ -47,51 +48,42 @@ export const CountriesGrid: FC<CountriesGridProps> = ({
   const renderContent = (): JSX.Element | JSX.Element[] => {
     if (error) {
       return error.status === 404 ? (
-        // when api throws 404
         <Typography variant="h5" component="h2" className={classes.status}>
           No results found....
         </Typography>
       ) : (
-        // when there is other error
         <Typography variant="h5" component="h2" className={classes.status}>
           Ups! Something went wrong...
         </Typography>
       );
     } else {
       if (isLoading || secondLoader) {
-        return Array.from(new Array(8)).map((_element, idx) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
-            <SkeletonCard />
+        return (
+          // when loading, display skeleton cards to keep user busy
+          <Grid container item xs={12} spacing={6}>
+            {Array.from(new Array(12)).map((_element, idx) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
+                <SkeletonCard />
+              </Grid>
+            ))}
           </Grid>
-        ));
+        );
       } else {
         // when country exists (there is no 404), results are empty and search exists, it means there is a wrong region chosen
-        if (!results.length && isSearch) {
-          return (
-            <Typography variant="h5" component="h2" className={classes.status}>
-              No such country in this region....
-            </Typography>
-          );
-        } else {
-          // in any other case, map through results
-          return results.map((country) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
-              <CountryCard
-                name={country.name}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-                flag={country.flag}
-              />
-            </Grid>
-          ));
-        }
+        return !results.length && isSearch ? (
+          <Typography variant="h5" component="h2" className={classes.status}>
+            No such country in this region....
+          </Typography>
+        ) : (
+          // in any other case, chunk results for better performance and map through them
+          chunkArray(results, 12).map((chunk, id) => <CountriesChunk chunk={chunk} key={id} />)
+        );
       }
     }
   };
 
   return (
-    <Grid container spacing={6} className={classes.root}>
+    <Grid container justify="center" className={classes.root}>
       {renderContent()}
     </Grid>
   );

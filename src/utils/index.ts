@@ -13,3 +13,12 @@ export const convertValueToLocale = (element: Value): Value => {
 export const checkIfEmpty = (str: string): boolean => {
   return str.length === 0 || !str.trim();
 };
+
+export const chunkArray = <T>(array: T[], size: number): T[][] => {
+  let result = [];
+  for (let i = 0; i < array.length; i += size) {
+    let chunk = array.slice(i, i + size);
+    result.push(chunk);
+  }
+  return result;
+};
