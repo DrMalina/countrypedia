@@ -26,10 +26,10 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
   useEffect(() => {
     const fetchData = async () => {
       setError(null);
+      setIsLoading(true);
+      setData({ hits: [] });
 
       if (!checkIfEmpty(url)) {
-        setIsLoading(true);
-
         try {
           const result = await axios.get(url);
           setData({ hits: result.data });
@@ -44,8 +44,8 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
           }
           console.log(error);
         }
-        setIsLoading(false);
       }
+      setIsLoading(false);
     };
 
     fetchData();

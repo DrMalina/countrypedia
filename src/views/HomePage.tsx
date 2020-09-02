@@ -32,6 +32,7 @@ export const HomePage: FC = () => {
   const { regions, currentRegion, setRegions, setCurrentRegion } = useRegions();
   const [results, setResults] = useState<Country[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [resultsLoader, setResultsLoader] = useState<boolean>(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   const classes = useStyles();
@@ -56,6 +57,11 @@ export const HomePage: FC = () => {
 
   // filter results based on selected regions
   useEffect(() => {
+    // there is a second loader here to deal with the edge case between updating data.hits when searchTerm exists:
+    // after each call data.hits resets, so if there was no secondLoader, on user search there would be displayed
+    // a msg for split second 'No country found' before loading starts. That is why loading is extended here to make sure to display
+    // results only when they are fetched
+    setResultsLoader(true);
     // if there is an user input, use api response, else use all countries (=context)
     const searchResults = debouncedSearchTerm ? data.hits : countries;
 
@@ -64,7 +70,9 @@ export const HomePage: FC = () => {
     } else {
       setResults(searchResults.filter((country) => country.region === currentRegion));
     }
-  }, [data, currentRegion, countries, debouncedSearchTerm]);
+
+    setResultsLoader(!searchResults.length);
+  }, [data.hits, currentRegion, countries, debouncedSearchTerm]);
 
   // make request based on search term
   useEffect(() => {
@@ -102,6 +110,7 @@ export const HomePage: FC = () => {
       <CountriesGrid
         results={results}
         isLoading={isLoading}
+        secondLoader={resultsLoader}
         isSearch={!checkIfEmpty(debouncedSearchTerm)}
         error={error}
       />

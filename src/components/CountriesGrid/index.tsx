@@ -9,6 +9,7 @@ import { Country as CountryData, Error } from 'types';
 interface CountriesGridProps {
   results: CountryData[];
   isLoading: boolean;
+  secondLoader: boolean;
   isSearch: boolean;
   error: Error | null;
 }
@@ -34,7 +35,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const CountriesGrid: FC<CountriesGridProps> = ({ results, isLoading, isSearch, error }) => {
+export const CountriesGrid: FC<CountriesGridProps> = ({
+  results,
+  isLoading,
+  isSearch,
+  error,
+  secondLoader,
+}) => {
   const classes = useStyles();
 
   const renderContent = (): JSX.Element | JSX.Element[] => {
@@ -51,32 +58,34 @@ export const CountriesGrid: FC<CountriesGridProps> = ({ results, isLoading, isSe
         </Typography>
       );
     } else {
-      if (isLoading) {
+      if (isLoading || secondLoader) {
         return Array.from(new Array(8)).map((_element, idx) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
             <SkeletonCard />
           </Grid>
         ));
-        // when country exists (there is no 404), results are empty and search exists, it means there is a wrong region chosen
-      } else if (!results.length && isSearch) {
-        return (
-          <Typography variant="h5" component="h2" className={classes.status}>
-            No such country in this region....
-          </Typography>
-        );
       } else {
-        // in any other case, map through results
-        return results.map((country) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
-            <CountryCard
-              name={country.name}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              flag={country.flag}
-            />
-          </Grid>
-        ));
+        // when country exists (there is no 404), results are empty and search exists, it means there is a wrong region chosen
+        if (!results.length && isSearch) {
+          return (
+            <Typography variant="h5" component="h2" className={classes.status}>
+              No such country in this region....
+            </Typography>
+          );
+        } else {
+          // in any other case, map through results
+          return results.map((country) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={country.name}>
+              <CountryCard
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                flag={country.flag}
+              />
+            </Grid>
+          ));
+        }
       }
     }
   };
