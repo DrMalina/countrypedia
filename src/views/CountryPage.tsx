@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       marginTop: theme.spacing(10),
+      paddingBottom: theme.spacing(8),
     },
     title: {
       fontWeight: 700,
@@ -35,7 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
     info: {
       marginLeft: 0,
       marginTop: theme.spacing(3),
-      paddingBottom: theme.spacing(8),
       [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(6),
         marginTop: 0,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Error } from 'types';
-import { checkIfEmpty } from 'utils';
+import { checkIfEmptyString } from 'utils';
 
 type Query = string;
 type Loading = boolean;
@@ -29,7 +29,7 @@ export const useDataApi = <T>(query: Query): [Result<T>, SetUrl] => {
       setIsLoading(true);
       setData({ hits: [] });
 
-      if (!checkIfEmpty(url)) {
+      if (!checkIfEmptyString(url)) {
         try {
           const result = await axios.get(url);
           setData({ hits: result.data });
