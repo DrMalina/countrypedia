@@ -46,7 +46,7 @@ export const Header: FC<HeaderProps> = ({ currentTheme, handleThemeChange }) => 
                 component="h1"
                 className={classes.heading}
               >
-                Where In The World?
+                Countrypedia
               </Typography>
             </Link>
             <Brightness5OutlinedIcon />
